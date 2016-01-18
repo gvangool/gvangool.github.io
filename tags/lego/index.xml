@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lego on Gert Van Gool</title>
+    <link>http://gertvangool.be/tags/lego/</link>
+    <description>Recent content in Lego on Gert Van Gool</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Feb 2010 13:20:21 +0100</lastBuildDate>
+    <atom:link href="http://gertvangool.be/tags/lego/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title></title>
+      <link>http://gertvangool.be/quote/only-the-best/</link>
+      <pubDate>Tue, 02 Feb 2010 13:20:21 +0100</pubDate>
+      
+      <guid>http://gertvangool.be/quote/only-the-best/</guid>
+      <description>&lt;p&gt;Kun det bedste er godt nok &amp;mdash; Lego motto&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
