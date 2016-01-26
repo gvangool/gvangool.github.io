@@ -151,8 +151,8 @@ advantage of <a class="reference external" href="https://pages.github.com/">Gith
 <li>In <tt class="docutils literal">checkout &gt; post</tt> we make sure that all submodules (in this case <a class="reference external" href="https://github.com/vjeantet/hugo-theme-casper">the
 theme</a>) are up to date.</li>
 <li>In <tt class="docutils literal">dependencies &gt; pre</tt>, we download and install the latest <a class="reference external" href="http://gohugo.io">Hugo</a> version and make it available in <tt class="docutils literal">$PATH</tt>. If you want
-to use <a href="#id1"><span class="problematic" id="id2">`Pygments`_</span></a> for code highlighting, you'll need to add a
-<a class="reference external" href="https://github.com/gvangool/gertvangool.be/blob/3865bc80d2da9bee08e2dd848a70d5ddfeb2e900/requirements.txt">requirements file</a>
+to use <a class="reference external" href="http://pygments.org/">Pygments</a> for code highlighting, you'll need
+to add a <a class="reference external" href="https://github.com/gvangool/gertvangool.be/blob/3865bc80d2da9bee08e2dd848a70d5ddfeb2e900/requirements.txt">requirements file</a>
 as well.</li>
 <li>In <tt class="docutils literal">deployment</tt> (together with <a class="reference external" href="https://github.com/gvangool/gertvangool.be/blob/2402b6baa0fc9ce74916e52a5d8ffe214bc81050/deploy.sh">a deploy script</a>)
 we clone the Github Pages repository and update it with the newly build
@@ -188,12 +188,8 @@ code.</li>
       <span class="punctuation indicator">-</span> <span class="literal scalar plain">git clone git&#64;github.com:gvangool/gvangool.github.io.git public</span>
       <span class="punctuation indicator">-</span> <span class="literal scalar plain">./deploy.sh</span>
 </pre>
-<div class="system-messages section">
-<h1>Docutils System Messages</h1>
-<div class="system-message" id="id1">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;stdin&gt;</tt>, line 11); <em><a href="#id2">backlink</a></em></p>
-Unknown target name: &quot;pygments&quot;.</div>
-</div>
+<p>Don't forget to add a SSH deployment key into Circle CI's project page
+(<tt class="docutils literal">Settings &gt; Permissions &gt; SSH Permissions</tt>).</p>
 </div>
     </section>
 
