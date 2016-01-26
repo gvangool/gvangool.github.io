@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  	<meta property="og:title" content=" Continuous deployment with Hugo &middot;  Gert Van Gool" />
+  	<meta property="og:site_name" content="Gert Van Gool" />
+  	<meta property="og:url" content="http://gertvangool.be/post/2016/hugo-ci-cd/" />
+
+    
+  	<meta property="og:type" content="article" />
+
+    <meta property="og:article:published_time" content="2016-01-26T16:44:02&#43;01:00" />
+
+    
+    
+
+  <title>
+     Continuous deployment with Hugo &middot;  Gert Van Gool
+  </title>
+
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://gertvangool.be/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="http://gertvangool.be/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="http://gertvangool.be/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="http://gertvangool.be/css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
+
+
+    
+      
+          <link href="http://gertvangool.be/index.xml" rel="alternate" type="application/rss+xml" title="Gert Van Gool" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.15" />
+
+    <link rel="canonical" href="http://gertvangool.be/post/2016/hugo-ci-cd/" />
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-24721395-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/post/">Blog</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/quote/">Quotes</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/about/">About me</a>
+            </li>
+        
+    </ul>
+    
+    
+    <a class="subscribe-button icon-feed" href="http://gertvangool.be/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Continuous deployment with Hugo</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2016-01-26T16:44:02&#43;01:00">
+            Jan 26, 2016
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <div class="document">
+
+
+<p>For better automation (and easier updating), I've added <a class="reference external" href="https://circleci.com/">CircleCI</a> for automated building and testing of the website.
+It will automatically deploy any pushes to the master into a <a class="reference external" href="https://github.com/gvangool/gvangool.github.io">separate git
+repository</a> (to take
+advantage of <a class="reference external" href="https://pages.github.com/">Github Pages</a>.</p>
+<p>The idea is rather simple:</p>
+<ul class="simple">
+<li>In <tt class="docutils literal">checkout &gt; post</tt> we make sure that all submodules (in this case <a class="reference external" href="https://github.com/vjeantet/hugo-theme-casper">the
+theme</a>) are up to date.</li>
+<li>In <tt class="docutils literal">dependencies &gt; pre</tt>, we download and install the latest <a class="reference external" href="http://gohugo.io">Hugo</a> version and make it available in <tt class="docutils literal">$PATH</tt>. If you want
+to use <a href="#id1"><span class="problematic" id="id2">`Pygments`_</span></a> for code highlighting, you'll need to add a
+<a class="reference external" href="https://github.com/gvangool/gertvangool.be/blob/3865bc80d2da9bee08e2dd848a70d5ddfeb2e900/requirements.txt">requirements file</a>
+as well.</li>
+<li>In <tt class="docutils literal">deployment</tt> (together with <a class="reference external" href="https://github.com/gvangool/gertvangool.be/blob/2402b6baa0fc9ce74916e52a5d8ffe214bc81050/deploy.sh">a deploy script</a>)
+we clone the Github Pages repository and update it with the newly build
+code.</li>
+</ul>
+<p>That comes together in the following <tt class="docutils literal">circle.yml</tt> file:</p>
+<pre class="code yaml literal-block">
+<span class="literal scalar plain">checkout</span><span class="punctuation indicator">:</span>
+  <span class="literal scalar plain">post</span><span class="punctuation indicator">:</span>
+    <span class="punctuation indicator">-</span> <span class="literal scalar plain">git submodule sync</span>
+    <span class="punctuation indicator">-</span> <span class="literal scalar plain">git submodule update --init --recursive</span>
+
+<span class="literal scalar plain">machine</span><span class="punctuation indicator">:</span>
+  <span class="literal scalar plain">pre</span><span class="punctuation indicator">:</span>
+    <span class="punctuation indicator">-</span> <span class="literal scalar plain">git config --global user.name &quot;CircleCI&quot;</span>
+    <span class="punctuation indicator">-</span> <span class="literal scalar plain">git config --global user.email &quot;circleci&#64;circleci.com&quot;</span>
+
+<span class="literal scalar plain">dependencies</span><span class="punctuation indicator">:</span>
+  <span class="literal scalar plain">pre</span><span class="punctuation indicator">:</span>
+    <span class="punctuation indicator">-</span> <span class="literal scalar plain">wget -O ~/tmp/hugo_0.15_linux_amd64.tar.gz https://github.com/spf13/hugo/releases/download/v0.15/hugo_0.15_linux_amd64.tar.gz</span>
+    <span class="punctuation indicator">-</span> <span class="literal scalar plain">cd ~/tmp &amp;&amp; tar xzf hugo_0.15_linux_amd64.tar.gz</span>
+    <span class="punctuation indicator">-</span> <span class="literal scalar plain">mv ~/tmp/hugo_0.15_linux_amd64/hugo_0.15_linux_amd64 ~/bin/hugo</span>
+
+<span class="literal scalar plain">test</span><span class="punctuation indicator">:</span>
+  <span class="literal scalar plain">override</span><span class="punctuation indicator">:</span>
+    <span class="punctuation indicator">-</span> <span class="literal scalar plain">hugo -v</span>
+
+<span class="literal scalar plain">deployment</span><span class="punctuation indicator">:</span>
+  <span class="literal scalar plain">master</span><span class="punctuation indicator">:</span>
+    <span class="literal scalar plain">branch</span><span class="punctuation indicator">:</span> <span class="literal scalar plain">master</span>
+    <span class="literal scalar plain">commands</span><span class="punctuation indicator">:</span>
+      <span class="punctuation indicator">-</span> <span class="literal scalar plain">rm -rf public</span>
+      <span class="punctuation indicator">-</span> <span class="literal scalar plain">git clone git&#64;github.com:gvangool/gvangool.github.io.git public</span>
+      <span class="punctuation indicator">-</span> <span class="literal scalar plain">./deploy.sh</span>
+</pre>
+<div class="system-messages section">
+<h1>Docutils System Messages</h1>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">&lt;stdin&gt;</tt>, line 11); <em><a href="#id2">backlink</a></em></p>
+Unknown target name: &quot;pygments&quot;.</div>
+</div>
+</div>
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="http://gertvangool.be/">Gert Van Gool</a></h4>
+  
+  <p>A 29 year old Belgian software developer, currently living in Blankenberge, Belgium</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Blankenberge, Belgium</span>
+    <span class="author-link icon-link"><a href="http://gertvangool.be">http://gertvangool.be</a></span>
+  </div>
+</section>
+
+
+
+    
+
+
+    
+
+
+  </footer>
+</article>
+
+</main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Gert Van Gool</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="http://gertvangool.be/js/jquery.js"></script>
+    <script type="text/javascript" src="http://gertvangool.be/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="http://gertvangool.be/js/index.js"></script>
+    
+</body>
+</html>
+

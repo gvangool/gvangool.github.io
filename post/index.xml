@@ -6,8 +6,72 @@
     <description>Recent content in Posts on Gert Van Gool</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Jan 2016 09:26:51 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jan 2016 16:44:02 +0100</lastBuildDate>
     <atom:link href="http://gertvangool.be/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Continuous deployment with Hugo</title>
+      <link>http://gertvangool.be/post/2016/hugo-ci-cd/</link>
+      <pubDate>Tue, 26 Jan 2016 16:44:02 +0100</pubDate>
+      
+      <guid>http://gertvangool.be/post/2016/hugo-ci-cd/</guid>
+      <description>&lt;div class=&#34;document&#34;&gt;
+
+
+&lt;p&gt;For better automation (and easier updating), I&#39;ve added &lt;a class=&#34;reference external&#34; href=&#34;https://circleci.com/&#34;&gt;CircleCI&lt;/a&gt; for automated building and testing of the website.
+It will automatically deploy any pushes to the master into a &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/gvangool/gvangool.github.io&#34;&gt;separate git
+repository&lt;/a&gt; (to take
+advantage of &lt;a class=&#34;reference external&#34; href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The idea is rather simple:&lt;/p&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;In &lt;tt class=&#34;docutils literal&#34;&gt;checkout &amp;gt; post&lt;/tt&gt; we make sure that all submodules (in this case &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/vjeantet/hugo-theme-casper&#34;&gt;the
+theme&lt;/a&gt;) are up to date.&lt;/li&gt;
+&lt;li&gt;In &lt;tt class=&#34;docutils literal&#34;&gt;dependencies &amp;gt; pre&lt;/tt&gt;, we download and install the latest &lt;a class=&#34;reference external&#34; href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; version and make it available in &lt;tt class=&#34;docutils literal&#34;&gt;$PATH&lt;/tt&gt;. If you want
+to use &lt;a href=&#34;#id1&#34;&gt;&lt;span class=&#34;problematic&#34; id=&#34;id2&#34;&gt;`Pygments`_&lt;/span&gt;&lt;/a&gt; for code highlighting, you&#39;ll need to add a
+&lt;a class=&#34;reference external&#34; href=&#34;https://github.com/gvangool/gertvangool.be/blob/3865bc80d2da9bee08e2dd848a70d5ddfeb2e900/requirements.txt&#34;&gt;requirements file&lt;/a&gt;
+as well.&lt;/li&gt;
+&lt;li&gt;In &lt;tt class=&#34;docutils literal&#34;&gt;deployment&lt;/tt&gt; (together with &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/gvangool/gertvangool.be/blob/2402b6baa0fc9ce74916e52a5d8ffe214bc81050/deploy.sh&#34;&gt;a deploy script&lt;/a&gt;)
+we clone the Github Pages repository and update it with the newly build
+code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That comes together in the following &lt;tt class=&#34;docutils literal&#34;&gt;circle.yml&lt;/tt&gt; file:&lt;/p&gt;
+&lt;pre class=&#34;code yaml literal-block&#34;&gt;
+&lt;span class=&#34;literal scalar plain&#34;&gt;checkout&lt;/span&gt;&lt;span class=&#34;punctuation indicator&#34;&gt;:&lt;/span&gt;
+  &lt;span class=&#34;literal scalar plain&#34;&gt;post&lt;/span&gt;&lt;span class=&#34;punctuation indicator&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;punctuation indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;literal scalar plain&#34;&gt;git submodule sync&lt;/span&gt;
+    &lt;span class=&#34;punctuation indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;literal scalar plain&#34;&gt;git submodule update --init --recursive&lt;/span&gt;
+
+&lt;span class=&#34;literal scalar plain&#34;&gt;machine&lt;/span&gt;&lt;span class=&#34;punctuation indicator&#34;&gt;:&lt;/span&gt;
+  &lt;span class=&#34;literal scalar plain&#34;&gt;pre&lt;/span&gt;&lt;span class=&#34;punctuation indicator&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;punctuation indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;literal scalar plain&#34;&gt;git config --global user.name &amp;quot;CircleCI&amp;quot;&lt;/span&gt;
+    &lt;span class=&#34;punctuation indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;literal scalar plain&#34;&gt;git config --global user.email &amp;quot;circleci&amp;#64;circleci.com&amp;quot;&lt;/span&gt;
+
+&lt;span class=&#34;literal scalar plain&#34;&gt;dependencies&lt;/span&gt;&lt;span class=&#34;punctuation indicator&#34;&gt;:&lt;/span&gt;
+  &lt;span class=&#34;literal scalar plain&#34;&gt;pre&lt;/span&gt;&lt;span class=&#34;punctuation indicator&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;punctuation indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;literal scalar plain&#34;&gt;wget -O ~/tmp/hugo_0.15_linux_amd64.tar.gz https://github.com/spf13/hugo/releases/download/v0.15/hugo_0.15_linux_amd64.tar.gz&lt;/span&gt;
+    &lt;span class=&#34;punctuation indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;literal scalar plain&#34;&gt;cd ~/tmp &amp;amp;&amp;amp; tar xzf hugo_0.15_linux_amd64.tar.gz&lt;/span&gt;
+    &lt;span class=&#34;punctuation indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;literal scalar plain&#34;&gt;mv ~/tmp/hugo_0.15_linux_amd64/hugo_0.15_linux_amd64 ~/bin/hugo&lt;/span&gt;
+
+&lt;span class=&#34;literal scalar plain&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;punctuation indicator&#34;&gt;:&lt;/span&gt;
+  &lt;span class=&#34;literal scalar plain&#34;&gt;override&lt;/span&gt;&lt;span class=&#34;punctuation indicator&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;punctuation indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;literal scalar plain&#34;&gt;hugo -v&lt;/span&gt;
+
+&lt;span class=&#34;literal scalar plain&#34;&gt;deployment&lt;/span&gt;&lt;span class=&#34;punctuation indicator&#34;&gt;:&lt;/span&gt;
+  &lt;span class=&#34;literal scalar plain&#34;&gt;master&lt;/span&gt;&lt;span class=&#34;punctuation indicator&#34;&gt;:&lt;/span&gt;
+    &lt;span class=&#34;literal scalar plain&#34;&gt;branch&lt;/span&gt;&lt;span class=&#34;punctuation indicator&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;literal scalar plain&#34;&gt;master&lt;/span&gt;
+    &lt;span class=&#34;literal scalar plain&#34;&gt;commands&lt;/span&gt;&lt;span class=&#34;punctuation indicator&#34;&gt;:&lt;/span&gt;
+      &lt;span class=&#34;punctuation indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;literal scalar plain&#34;&gt;rm -rf public&lt;/span&gt;
+      &lt;span class=&#34;punctuation indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;literal scalar plain&#34;&gt;git clone git&amp;#64;github.com:gvangool/gvangool.github.io.git public&lt;/span&gt;
+      &lt;span class=&#34;punctuation indicator&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;literal scalar plain&#34;&gt;./deploy.sh&lt;/span&gt;
+&lt;/pre&gt;
+&lt;div class=&#34;system-messages section&#34;&gt;
+&lt;h1&gt;Docutils System Messages&lt;/h1&gt;
+&lt;div class=&#34;system-message&#34; id=&#34;id1&#34;&gt;
+&lt;p class=&#34;system-message-title&#34;&gt;System Message: ERROR/3 (&lt;tt class=&#34;docutils&#34;&gt;&amp;lt;stdin&amp;gt;&lt;/tt&gt;, line 11); &lt;em&gt;&lt;a href=&#34;#id2&#34;&gt;backlink&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+Unknown target name: &amp;quot;pygments&amp;quot;.&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>First Post</title>

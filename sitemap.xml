@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://gertvangool.be/</loc>
-    <lastmod>2016-01-18T09:26:51+01:00</lastmod>
+    <lastmod>2016-01-26T16:44:02+01:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gertvangool.be/post/2016/hugo-ci-cd/</loc>
+    <lastmod>2016-01-26T16:44:02+01:00</lastmod>
   </url>
   
   <url>
