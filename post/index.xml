@@ -24,15 +24,19 @@ repository&lt;/a&gt; (to take
 advantage of &lt;a class=&#34;reference external&#34; href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The idea is rather simple:&lt;/p&gt;
 &lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;Dependencies:  e download and install the latest &lt;a class=&#34;reference external&#34; href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;
+version and make it available in &lt;tt class=&#34;docutils literal&#34;&gt;~/bin&lt;/tt&gt; which is in &lt;tt class=&#34;docutils literal&#34;&gt;$PATH&lt;/tt&gt; (this
+happens in &lt;tt class=&#34;docutils literal&#34;&gt;dependencies &amp;gt; pre&lt;/tt&gt;). For syntax highlighting, we need to use
+&lt;a class=&#34;reference external&#34; href=&#34;http://pygments.org/&#34;&gt;Pygments&lt;/a&gt;, we&#39;ll add a &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/gvangool/gertvangool.be/blob/3865bc80d2da9bee08e2dd848a70d5ddfeb2e900/requirements.txt&#34;&gt;requirements file&lt;/a&gt;
+which CircleCI automatically installs in a virtualenv.&lt;/li&gt;
 &lt;li&gt;In &lt;tt class=&#34;docutils literal&#34;&gt;checkout &amp;gt; post&lt;/tt&gt; we make sure that all submodules (in this case &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/vjeantet/hugo-theme-casper&#34;&gt;the
 theme&lt;/a&gt;) are up to date.&lt;/li&gt;
-&lt;li&gt;In &lt;tt class=&#34;docutils literal&#34;&gt;dependencies &amp;gt; pre&lt;/tt&gt;, we download and install the latest &lt;a class=&#34;reference external&#34; href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; version and make it available in &lt;tt class=&#34;docutils literal&#34;&gt;$PATH&lt;/tt&gt;. If you want
-to use &lt;a class=&#34;reference external&#34; href=&#34;http://pygments.org/&#34;&gt;Pygments&lt;/a&gt; for code highlighting, you&#39;ll need
-to add a &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/gvangool/gertvangool.be/blob/3865bc80d2da9bee08e2dd848a70d5ddfeb2e900/requirements.txt&#34;&gt;requirements file&lt;/a&gt;
-as well.&lt;/li&gt;
-&lt;li&gt;In &lt;tt class=&#34;docutils literal&#34;&gt;deployment&lt;/tt&gt; (together with &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/gvangool/gertvangool.be/blob/2402b6baa0fc9ce74916e52a5d8ffe214bc81050/deploy.sh&#34;&gt;a deploy script&lt;/a&gt;)
-we clone the Github Pages repository and update it with the newly build
-code.&lt;/li&gt;
+&lt;li&gt;For actual tests, we just run Hugo in verbose mode. It won&#39;t catch all the
+errors, but at least we have a good idea.&lt;/li&gt;
+&lt;li&gt;Deployment: Since we just ran our tests, the &lt;tt class=&#34;docutils literal&#34;&gt;public&lt;/tt&gt; directory still
+contains the website. So before we clone the Github Pages repository, we
+need to empty that directory. The &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/gvangool/gertvangool.be/blob/2402b6baa0fc9ce74916e52a5d8ffe214bc81050/deploy.sh&#34;&gt;deploy script&lt;/a&gt;)
+will rebuild the website and commit it to Github.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;That comes together in the following &lt;tt class=&#34;docutils literal&#34;&gt;circle.yml&lt;/tt&gt; file:&lt;/p&gt;
 &lt;pre class=&#34;code yaml literal-block&#34;&gt;

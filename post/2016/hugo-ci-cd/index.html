@@ -104,8 +104,8 @@
 
 
 
-<header class="main-header post-head no-cover">
-  <nav class="main-nav clearfix">
+<header class="main-header post-head" style="background-image: url(http://gertvangool.be//uploads/post/gohugo-io-header.png)">
+  <nav class="main-nav overlay clearfix">
 
 
   
@@ -148,15 +148,19 @@ repository</a> (to take
 advantage of <a class="reference external" href="https://pages.github.com/">Github Pages</a>.</p>
 <p>The idea is rather simple:</p>
 <ul class="simple">
+<li>Dependencies:  e download and install the latest <a class="reference external" href="http://gohugo.io">Hugo</a>
+version and make it available in <tt class="docutils literal">~/bin</tt> which is in <tt class="docutils literal">$PATH</tt> (this
+happens in <tt class="docutils literal">dependencies &gt; pre</tt>). For syntax highlighting, we need to use
+<a class="reference external" href="http://pygments.org/">Pygments</a>, we'll add a <a class="reference external" href="https://github.com/gvangool/gertvangool.be/blob/3865bc80d2da9bee08e2dd848a70d5ddfeb2e900/requirements.txt">requirements file</a>
+which CircleCI automatically installs in a virtualenv.</li>
 <li>In <tt class="docutils literal">checkout &gt; post</tt> we make sure that all submodules (in this case <a class="reference external" href="https://github.com/vjeantet/hugo-theme-casper">the
 theme</a>) are up to date.</li>
-<li>In <tt class="docutils literal">dependencies &gt; pre</tt>, we download and install the latest <a class="reference external" href="http://gohugo.io">Hugo</a> version and make it available in <tt class="docutils literal">$PATH</tt>. If you want
-to use <a class="reference external" href="http://pygments.org/">Pygments</a> for code highlighting, you'll need
-to add a <a class="reference external" href="https://github.com/gvangool/gertvangool.be/blob/3865bc80d2da9bee08e2dd848a70d5ddfeb2e900/requirements.txt">requirements file</a>
-as well.</li>
-<li>In <tt class="docutils literal">deployment</tt> (together with <a class="reference external" href="https://github.com/gvangool/gertvangool.be/blob/2402b6baa0fc9ce74916e52a5d8ffe214bc81050/deploy.sh">a deploy script</a>)
-we clone the Github Pages repository and update it with the newly build
-code.</li>
+<li>For actual tests, we just run Hugo in verbose mode. It won't catch all the
+errors, but at least we have a good idea.</li>
+<li>Deployment: Since we just ran our tests, the <tt class="docutils literal">public</tt> directory still
+contains the website. So before we clone the Github Pages repository, we
+need to empty that directory. The <a class="reference external" href="https://github.com/gvangool/gertvangool.be/blob/2402b6baa0fc9ce74916e52a5d8ffe214bc81050/deploy.sh">deploy script</a>)
+will rebuild the website and commit it to Github.</li>
 </ul>
 <p>That comes together in the following <tt class="docutils literal">circle.yml</tt> file:</p>
 <pre class="code yaml literal-block">
