@@ -34,10 +34,10 @@ Brain&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;For better automation (and easier updating), I&#39;ve added &lt;a class=&#34;reference external&#34; href=&#34;https://circleci.com/&#34;&gt;CircleCI&lt;/a&gt; for automated building and testing of the website.
 It will automatically deploy any pushes to the master into a &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/gvangool/gvangool.github.io&#34;&gt;separate git
 repository&lt;/a&gt; (to take
-advantage of &lt;a class=&#34;reference external&#34; href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
+advantage of &lt;a class=&#34;reference external&#34; href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;The idea is rather simple:&lt;/p&gt;
 &lt;ul class=&#34;simple&#34;&gt;
-&lt;li&gt;Dependencies:  e download and install the latest &lt;a class=&#34;reference external&#34; href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;
+&lt;li&gt;Dependencies: we download and install the latest &lt;a class=&#34;reference external&#34; href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;
 version and make it available in &lt;tt class=&#34;docutils literal&#34;&gt;~/bin&lt;/tt&gt; which is in &lt;tt class=&#34;docutils literal&#34;&gt;$PATH&lt;/tt&gt; (this
 happens in &lt;tt class=&#34;docutils literal&#34;&gt;dependencies &amp;gt; pre&lt;/tt&gt;). For syntax highlighting, we need to use
 &lt;a class=&#34;reference external&#34; href=&#34;http://pygments.org/&#34;&gt;Pygments&lt;/a&gt;, we&#39;ll add a &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/gvangool/gertvangool.be/blob/3865bc80d2da9bee08e2dd848a70d5ddfeb2e900/requirements.txt&#34;&gt;requirements file&lt;/a&gt;

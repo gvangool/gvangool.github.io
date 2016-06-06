@@ -145,10 +145,10 @@
 <p>For better automation (and easier updating), I've added <a class="reference external" href="https://circleci.com/">CircleCI</a> for automated building and testing of the website.
 It will automatically deploy any pushes to the master into a <a class="reference external" href="https://github.com/gvangool/gvangool.github.io">separate git
 repository</a> (to take
-advantage of <a class="reference external" href="https://pages.github.com/">Github Pages</a>.</p>
+advantage of <a class="reference external" href="https://pages.github.com/">Github Pages</a>).</p>
 <p>The idea is rather simple:</p>
 <ul class="simple">
-<li>Dependencies:  e download and install the latest <a class="reference external" href="http://gohugo.io">Hugo</a>
+<li>Dependencies: we download and install the latest <a class="reference external" href="http://gohugo.io">Hugo</a>
 version and make it available in <tt class="docutils literal">~/bin</tt> which is in <tt class="docutils literal">$PATH</tt> (this
 happens in <tt class="docutils literal">dependencies &gt; pre</tt>). For syntax highlighting, we need to use
 <a class="reference external" href="http://pygments.org/">Pygments</a>, we'll add a <a class="reference external" href="https://github.com/gvangool/gertvangool.be/blob/3865bc80d2da9bee08e2dd848a70d5ddfeb2e900/requirements.txt">requirements file</a>
