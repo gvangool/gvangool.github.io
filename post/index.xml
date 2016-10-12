@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Gert Van Gool</title>
-    <link>http://gertvangool.be/post/</link>
-    <description>Recent content in Posts on Gert Van Gool</description>
+    <title>Post-rsses on Gert Van Gool</title>
+    <link>http://gertvangool.be/post/index.xml</link>
+    <description>Recent content in Post-rsses on Gert Van Gool</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 26 Jan 2016 16:44:02 +0100</lastBuildDate>
@@ -21,7 +21,8 @@
 &lt;p&gt;For better automation (and easier updating), I&#39;ve added &lt;a class=&#34;reference external&#34; href=&#34;https://circleci.com/&#34;&gt;CircleCI&lt;/a&gt; for automated building and testing of the website.
 It will automatically deploy any pushes to the master into a &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/gvangool/gvangool.github.io&#34;&gt;separate git
 repository&lt;/a&gt; (to take
-advantage of &lt;a class=&#34;reference external&#34; href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt;).&lt;/p&gt;
+advantage of &lt;a class=&#34;reference external&#34; href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt;).
+&lt;/p&gt;
 &lt;p&gt;The idea is rather simple:&lt;/p&gt;
 &lt;ul class=&#34;simple&#34;&gt;
 &lt;li&gt;Dependencies: we download and install the latest &lt;a class=&#34;reference external&#34; href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;
