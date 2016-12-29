@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://gertvangool.be/</loc>
-    <lastmod>2016-08-16T19:39:43+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://gertvangool.be/quote/r2d2-feels-empty-inside/</loc>
     <lastmod>2016-08-16T19:39:43+02:00</lastmod>
   </url>
@@ -144,6 +139,65 @@
   <url>
     <loc>https://gertvangool.be/quote/he-who-can-can/</loc>
     <lastmod>2009-04-15T08:34:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/development/</loc>
+    <lastmod>2009-04-16T13:18:55+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/</loc>
+    <lastmod>2016-08-16T19:39:43+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/hardware/</loc>
+    <lastmod>2009-07-27T08:00:39+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/lego/</loc>
+    <lastmod>2010-02-02T13:20:21+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/post/</loc>
+    <lastmod>2016-01-26T16:44:02+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/product/</loc>
+    <lastmod>2015-01-05T23:35:46+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/quotes/</loc>
+    <lastmod>2016-08-16T19:39:43+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/quote/</loc>
+    <lastmod>2016-08-16T19:39:43+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/software/</loc>
+    <lastmod>2009-07-27T08:00:39+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/</loc>
+    <priority>0</priority>
   </url>
   
 </urlset>
