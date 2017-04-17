@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Gert Van Gool</title>
+    <link>https://gertvangool.be/tags/</link>
+    <description>Recent content in Tags on Gert Van Gool</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 16 Apr 2009 13:18:55 +0100</lastBuildDate>
+    
+	<atom:link href="https://gertvangool.be/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Development</title>
+      <link>https://gertvangool.be/tags/development/</link>
+      <pubDate>Thu, 16 Apr 2009 13:18:55 +0100</pubDate>
+      
+      <guid>https://gertvangool.be/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hardware</title>
+      <link>https://gertvangool.be/tags/hardware/</link>
+      <pubDate>Mon, 27 Jul 2009 08:00:39 +0100</pubDate>
+      
+      <guid>https://gertvangool.be/tags/hardware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lego</title>
+      <link>https://gertvangool.be/tags/lego/</link>
+      <pubDate>Tue, 02 Feb 2010 13:20:21 +0100</pubDate>
+      
+      <guid>https://gertvangool.be/tags/lego/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Product</title>
+      <link>https://gertvangool.be/tags/product/</link>
+      <pubDate>Mon, 05 Jan 2015 23:35:46 +0100</pubDate>
+      
+      <guid>https://gertvangool.be/tags/product/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quotes</title>
+      <link>https://gertvangool.be/tags/quotes/</link>
+      <pubDate>Tue, 16 Aug 2016 19:39:43 +0200</pubDate>
+      
+      <guid>https://gertvangool.be/tags/quotes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>https://gertvangool.be/tags/software/</link>
+      <pubDate>Mon, 27 Jul 2009 08:00:39 +0100</pubDate>
+      
+      <guid>https://gertvangool.be/tags/software/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

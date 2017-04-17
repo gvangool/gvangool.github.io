@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Software on Gert Van Gool</title>
-    <link>https://gertvangool.be/tags/software/index.xml</link>
+    <link>https://gertvangool.be/tags/software/</link>
     <description>Recent content in Software on Gert Van Gool</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://gertvangool.be/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Jul 2009 08:00:39 +0100</lastBuildDate>
+    
+	<atom:link href="https://gertvangool.be/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title></title>
@@ -14,10 +17,8 @@
       <pubDate>Mon, 27 Jul 2009 08:00:39 +0100</pubDate>
       
       <guid>https://gertvangool.be/quote/software-hardware/</guid>
-      <description>&lt;p&gt;People who are really serious about software should make their own hardware.&lt;/p&gt;
-
-&lt;p&gt;&amp;mdash; Alan Kay&lt;/p&gt;
-</description>
+      <description>People who are really serious about software should make their own hardware.
+&amp;mdash; Alan Kay</description>
     </item>
     
   </channel>

@@ -2,11 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lego on Gert Van Gool</title>
-    <link>https://gertvangool.be/tags/lego/index.xml</link>
+    <link>https://gertvangool.be/tags/lego/</link>
     <description>Recent content in Lego on Gert Van Gool</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://gertvangool.be/tags/lego/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Feb 2010 13:20:21 +0100</lastBuildDate>
+    
+	<atom:link href="https://gertvangool.be/tags/lego/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title></title>
