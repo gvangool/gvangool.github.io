@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Gert Van Gool</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Apr 2009 13:18:55 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 26 Jan 2016 16:44:02 +0100</lastBuildDate>
     
 	<atom:link href="https://gertvangool.be/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cd</title>
+      <link>https://gertvangool.be/tags/cd/</link>
+      <pubDate>Tue, 26 Jan 2016 16:44:02 +0100</pubDate>
+      
+      <guid>https://gertvangool.be/tags/cd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ci</title>
+      <link>https://gertvangool.be/tags/ci/</link>
+      <pubDate>Tue, 26 Jan 2016 16:44:02 +0100</pubDate>
+      
+      <guid>https://gertvangool.be/tags/ci/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Development</title>
@@ -26,6 +44,15 @@
       <pubDate>Mon, 27 Jul 2009 08:00:39 +0100</pubDate>
       
       <guid>https://gertvangool.be/tags/hardware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://gertvangool.be/tags/hugo/</link>
+      <pubDate>Tue, 26 Jan 2016 16:44:02 +0100</pubDate>
+      
+      <guid>https://gertvangool.be/tags/hugo/</guid>
       <description></description>
     </item>
     

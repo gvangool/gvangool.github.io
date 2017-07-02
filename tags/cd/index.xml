@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Gert Van Gool</title>
-    <link>https://gertvangool.be/post/</link>
-    <description>Recent content in Posts on Gert Van Gool</description>
+    <title>Cd on Gert Van Gool</title>
+    <link>https://gertvangool.be/tags/cd/</link>
+    <description>Recent content in Cd on Gert Van Gool</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 26 Jan 2016 16:44:02 +0100</lastBuildDate>
     
-	<atom:link href="https://gertvangool.be/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gertvangool.be/tags/cd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -23,15 +23,6 @@ It will automatically deploy any pushes to the master into a &lt;a href=&#34;htt
 repository&lt;/a&gt; (to take
 advantage of &lt;a href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt;).
 &lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>First Post</title>
-      <link>https://gertvangool.be/post/2016/first-post/</link>
-      <pubDate>Mon, 18 Jan 2016 09:26:51 +0100</pubDate>
-      
-      <guid>https://gertvangool.be/post/2016/first-post/</guid>
-      <description>Why start blogging now? Actually, it&amp;rsquo;s basically an excuse for a new website. For a new photography website. In the meanwhile, I can dump some documents littered across my computers with tiny bits of information.</description>
     </item>
     
   </channel>
