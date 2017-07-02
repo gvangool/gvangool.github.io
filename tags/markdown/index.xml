@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo on Gert Van Gool</title>
-    <link>https://gertvangool.be/tags/hugo/</link>
-    <description>Recent content in Hugo on Gert Van Gool</description>
+    <title>Markdown on Gert Van Gool</title>
+    <link>https://gertvangool.be/tags/markdown/</link>
+    <description>Recent content in Markdown on Gert Van Gool</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 02 Jul 2017 13:13:59 +0200</lastBuildDate>
     
-	<atom:link href="https://gertvangool.be/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gertvangool.be/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -30,20 +30,6 @@ Most of the static-site generator ecosystem, like
 &lt;a href=&#34;https://www.netlifycms.org/&#34;&gt;netlifyCMS&lt;/a&gt;, only supports Markdown. So
 to better support customers, let&amp;rsquo;s ignore reStructuredText for a while and
 focus on Markdown.
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Continuous deployment with Hugo</title>
-      <link>https://gertvangool.be/post/2016/hugo-ci-cd/</link>
-      <pubDate>Tue, 26 Jan 2016 16:44:02 +0100</pubDate>
-      
-      <guid>https://gertvangool.be/post/2016/hugo-ci-cd/</guid>
-      <description>&lt;p&gt;For better automation (and easier updating), I&amp;rsquo;ve added &lt;a href=&#34;https://circleci.com/&#34;&gt;CircleCI&lt;/a&gt;
-for automated building and testing of the website.
-It will automatically deploy any pushes to the master into a &lt;a href=&#34;https://github.com/gvangool/gvangool.github.io&#34;&gt;separate git
-repository&lt;/a&gt; (to take
-advantage of &lt;a href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt;).
 &lt;/p&gt;</description>
     </item>
     

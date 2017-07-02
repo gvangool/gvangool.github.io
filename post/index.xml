@@ -6,10 +6,32 @@
     <description>Recent content in Posts on Gert Van Gool</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Jan 2016 16:44:02 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jul 2017 13:13:59 +0200</lastBuildDate>
     
 	<atom:link href="https://gertvangool.be/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Goodbye RST</title>
+      <link>https://gertvangool.be/post/2017/goodbye-rst/</link>
+      <pubDate>Sun, 02 Jul 2017 13:13:59 +0200</pubDate>
+      
+      <guid>https://gertvangool.be/post/2017/goodbye-rst/</guid>
+      <description>&lt;p&gt;Today I&amp;rsquo;ve said goodbye to
+&lt;a href=&#34;http://docutils.sourceforge.net/rst.html&#34;&gt;reStructuredText&lt;/a&gt; for my website.&lt;/p&gt;
+
+&lt;p&gt;I have a personal preference for reStructuredText, because it has a clear spec
+and is beautifully integrated into the Python ecosystem. Just look at
+&lt;a href=&#34;http://www.sphinx-doc.org/&#34;&gt;Sphinx&lt;/a&gt; and &lt;a href=&#34;https://readthedocs.org/&#34;&gt;Read the
+Docs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;But my personal website remains a playground to test technology for customers.
+Most of the static-site generator ecosystem, like
+&lt;a href=&#34;https://www.netlifycms.org/&#34;&gt;netlifyCMS&lt;/a&gt;, only supports Markdown. So
+to better support customers, let&amp;rsquo;s ignore reStructuredText for a while and
+focus on Markdown.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Continuous deployment with Hugo</title>
