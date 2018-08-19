@@ -68,7 +68,7 @@ for automated building and testing of the website." />
       
       
     
-    <meta name="generator" content="Hugo 0.25.1" />
+    <meta name="generator" content="Hugo 0.47" />
 
     <link rel="canonical" href="https://gertvangool.be/post/2016/hugo-ci-cd/" />
 
@@ -262,34 +262,35 @@ will rebuild the website and commit it to Github.</li>
 </ul>
 
 <p>That comes together in the following <code>circle.yml</code> file:</p>
-<div class="highlight" style="background: #fdf6e3"><pre style="line-height: 125%"><span></span><span style="color: #657b83">checkout:</span>
-  <span style="color: #657b83">post:</span>
-    <span style="color: #657b83">-</span> <span style="color: #657b83">git submodule sync</span>
-    <span style="color: #657b83">-</span> <span style="color: #657b83">git submodule update --init --recursive</span>
 
-<span style="color: #657b83">machine:</span>
-  <span style="color: #657b83">pre:</span>
-    <span style="color: #657b83">-</span> <span style="color: #657b83">git config --global user.name &quot;CircleCI&quot;</span>
-    <span style="color: #657b83">-</span> <span style="color: #657b83">git config --global user.email &quot;circleci@circleci.com&quot;</span>
+<pre><code class="language-yaml">checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init --recursive
 
-<span style="color: #657b83">dependencies:</span>
-  <span style="color: #657b83">pre:</span>
-    <span style="color: #657b83">-</span> <span style="color: #657b83">wget -O ~/tmp/hugo_0.15_linux_amd64.tar.gz https://github.com/spf13/hugo/releases/download/v0.15/hugo_0.15_linux_amd64.tar.gz</span>
-    <span style="color: #657b83">-</span> <span style="color: #657b83">cd ~/tmp &amp;&amp; tar xzf hugo_0.15_linux_amd64.tar.gz</span>
-    <span style="color: #657b83">-</span> <span style="color: #657b83">mv ~/tmp/hugo_0.15_linux_amd64/hugo_0.15_linux_amd64 ~/bin/hugo</span>
+machine:
+  pre:
+    - git config --global user.name &quot;CircleCI&quot;
+    - git config --global user.email &quot;circleci@circleci.com&quot;
 
-<span style="color: #657b83">test:</span>
-  <span style="color: #657b83">override:</span>
-    <span style="color: #657b83">-</span> <span style="color: #657b83">hugo -v</span>
+dependencies:
+  pre:
+    - wget -O ~/tmp/hugo_0.15_linux_amd64.tar.gz https://github.com/spf13/hugo/releases/download/v0.15/hugo_0.15_linux_amd64.tar.gz
+    - cd ~/tmp &amp;&amp; tar xzf hugo_0.15_linux_amd64.tar.gz
+    - mv ~/tmp/hugo_0.15_linux_amd64/hugo_0.15_linux_amd64 ~/bin/hugo
 
-<span style="color: #657b83">deployment:</span>
-  <span style="color: #657b83">master:</span>
-    <span style="color: #657b83">branch:</span> <span style="color: #657b83">master</span>
-    <span style="color: #657b83">commands:</span>
-      <span style="color: #657b83">-</span> <span style="color: #657b83">rm -rf public</span>
-      <span style="color: #657b83">-</span> <span style="color: #657b83">git clone git@github.com:gvangool/gvangool.github.io.git public</span>
-      <span style="color: #657b83">-</span> <span style="color: #657b83">./deploy.sh</span>
-</pre></div>
+test:
+  override:
+    - hugo -v
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - rm -rf public
+      - git clone git@github.com:gvangool/gvangool.github.io.git public
+      - ./deploy.sh
+</code></pre>
 
 <p>Don&rsquo;t forget to add a SSH deployment key into Circle CI&rsquo;s project page
 (<code>Settings &gt; Permissions &gt; SSH Permissions</code>).</p>
