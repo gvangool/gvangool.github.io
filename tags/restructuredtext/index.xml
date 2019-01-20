@@ -29,8 +29,7 @@ Docs&lt;/a&gt;.&lt;/p&gt;
 Most of the static-site generator ecosystem, like
 &lt;a href=&#34;https://www.netlifycms.org/&#34;&gt;netlifyCMS&lt;/a&gt;, only supports Markdown. So
 to better support customers, let&amp;rsquo;s ignore reStructuredText for a while and
-focus on Markdown.
-&lt;/p&gt;</description>
+focus on Markdown.&lt;/p&gt;</description>
     </item>
     
   </channel>

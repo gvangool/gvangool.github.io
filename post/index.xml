@@ -29,8 +29,7 @@ Docs&lt;/a&gt;.&lt;/p&gt;
 Most of the static-site generator ecosystem, like
 &lt;a href=&#34;https://www.netlifycms.org/&#34;&gt;netlifyCMS&lt;/a&gt;, only supports Markdown. So
 to better support customers, let&amp;rsquo;s ignore reStructuredText for a while and
-focus on Markdown.
-&lt;/p&gt;</description>
+focus on Markdown.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -43,8 +42,7 @@ focus on Markdown.
 for automated building and testing of the website.
 It will automatically deploy any pushes to the master into a &lt;a href=&#34;https://github.com/gvangool/gvangool.github.io&#34;&gt;separate git
 repository&lt;/a&gt; (to take
-advantage of &lt;a href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt;).
-&lt;/p&gt;</description>
+advantage of &lt;a href=&#34;https://pages.github.com/&#34;&gt;Github Pages&lt;/a&gt;).&lt;/p&gt;</description>
     </item>
     
     <item>
