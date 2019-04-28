@@ -3,8 +3,61 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://gertvangool.be/quote/avoiding-stupidity/</loc>
+    <lastmod>2019-04-28T13:43:46+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/</loc>
+    <lastmod>2019-04-28T13:43:46+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/quote/</loc>
+    <lastmod>2019-04-28T13:43:46+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/</loc>
+    <lastmod>2019-04-28T13:43:46+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/quotes/</loc>
+    <lastmod>2019-04-28T13:43:46+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://gertvangool.be/post/2017/goodbye-rst/</loc>
     <lastmod>2017-07-02T13:13:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/markdown/</loc>
+    <lastmod>2017-07-02T13:13:59+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/post/</loc>
+    <lastmod>2017-07-02T13:13:59+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/hugo/</loc>
+    <lastmod>2017-07-02T13:13:59+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/restructuredtext/</loc>
+    <lastmod>2017-07-02T13:13:59+02:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -23,6 +76,18 @@
   </url>
   
   <url>
+    <loc>https://gertvangool.be/tags/cd/</loc>
+    <lastmod>2016-01-26T16:44:02+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/ci/</loc>
+    <lastmod>2016-01-26T16:44:02+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://gertvangool.be/post/2016/first-post/</loc>
     <lastmod>2016-01-18T09:26:51+01:00</lastmod>
   </url>
@@ -35,6 +100,12 @@
   <url>
     <loc>https://gertvangool.be/quote/classic-beautiful-traditional-products/</loc>
     <lastmod>2015-01-05T23:35:46+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/product/</loc>
+    <lastmod>2015-01-05T23:35:46+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -60,6 +131,12 @@
   <url>
     <loc>https://gertvangool.be/quote/only-the-best/</loc>
     <lastmod>2010-02-02T13:20:21+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/lego/</loc>
+    <lastmod>2010-02-02T13:20:21+01:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -108,6 +185,18 @@
   </url>
   
   <url>
+    <loc>https://gertvangool.be/tags/hardware/</loc>
+    <lastmod>2009-07-27T08:00:39+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://gertvangool.be/tags/software/</loc>
+    <lastmod>2009-07-27T08:00:39+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://gertvangool.be/quote/she-wont-live/</loc>
     <lastmod>2009-07-17T09:57:48+01:00</lastmod>
   </url>
@@ -143,102 +232,18 @@
   </url>
   
   <url>
-    <loc>https://gertvangool.be/quote/he-who-can-can/</loc>
-    <lastmod>2009-04-15T08:34:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://gertvangool.be/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gertvangool.be/tags/cd/</loc>
-    <lastmod>2016-01-26T16:44:02+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gertvangool.be/tags/ci/</loc>
-    <lastmod>2016-01-26T16:44:02+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://gertvangool.be/tags/development/</loc>
     <lastmod>2009-04-16T13:18:55+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://gertvangool.be/</loc>
-    <lastmod>2017-07-02T13:13:59+02:00</lastmod>
-    <priority>0</priority>
+    <loc>https://gertvangool.be/quote/he-who-can-can/</loc>
+    <lastmod>2009-04-15T08:34:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://gertvangool.be/tags/hardware/</loc>
-    <lastmod>2009-07-27T08:00:39+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gertvangool.be/tags/hugo/</loc>
-    <lastmod>2017-07-02T13:13:59+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gertvangool.be/tags/lego/</loc>
-    <lastmod>2010-02-02T13:20:21+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gertvangool.be/tags/markdown/</loc>
-    <lastmod>2017-07-02T13:13:59+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gertvangool.be/post/</loc>
-    <lastmod>2017-07-02T13:13:59+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gertvangool.be/tags/product/</loc>
-    <lastmod>2015-01-05T23:35:46+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gertvangool.be/quote/</loc>
-    <lastmod>2016-08-16T19:39:43+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gertvangool.be/tags/quotes/</loc>
-    <lastmod>2016-08-16T19:39:43+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gertvangool.be/tags/restructuredtext/</loc>
-    <lastmod>2017-07-02T13:13:59+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gertvangool.be/tags/software/</loc>
-    <lastmod>2009-07-27T08:00:39+01:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://gertvangool.be/tags/</loc>
-    <lastmod>2016-01-26T16:44:02+01:00</lastmod>
+    <loc>https://gertvangool.be/categories/</loc>
     <priority>0</priority>
   </url>
   
